@@ -14,7 +14,7 @@ extends Model {} Blog.init({
         allowNull: false
     },
     blog_content: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true
     },
     user_id: {
