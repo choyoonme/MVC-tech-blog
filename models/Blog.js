@@ -28,7 +28,7 @@ extends Model {} Blog.init({
     sequelize,
     freezeTableName: true,
     underscored: true,
-    moderlName: 'blog'
+    modelName: 'blog'
 });
 
 module.exports = Blog;
