@@ -1,47 +1,33 @@
-const newFormHandler = async (event) => {
-  event.preventDefault();
-
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
-
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
-      method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to create project');
+async function signupFormHandler(event) {
+    event.preventDefault();
+  
+    const username = document.querySelector('#username-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
+    const twitter = document.querySelector('#twitter-signup').value.trim();
+    const github = document.querySelector('#github-signup').value.trim();
+  
+    if (username && email && password) {
+      const response = await fetch('/api/users', {
+        method: 'post',
+        body: JSON.stringify({
+          username,
+          email,
+          twitter,
+          github,
+          password
+        }),
+        headers: { 'Content-Type': 'application/json' }
+      });
+  
+      // check the response status
+      if (response.ok) {
+        console.log('success');
+        document.location.replace('/dashboard');
+      } else {
+        alert(response.statusText);
+      }
     }
-  }
-};
-
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/projects/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete project');
-    }
-  }
-};
-
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
-
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+}
+  
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
