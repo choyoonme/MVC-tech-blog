@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const projectRoutes = require('./projectRoutes');
+const blogRoutes = require('./blogRoutes');
 const seedDatabaseRoutes = require('./seedDatabaseRoutes');
 router.use('/users', userRoutes);
-router.use('/projects', projectRoutes);
+router.use('/projects', blogRoutes);
 
 router.use('/seedDatabase', seedDatabaseRoutes);
 
