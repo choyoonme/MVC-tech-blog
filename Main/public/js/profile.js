@@ -1,23 +1,23 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#blog-name').value.trim();
-  const blog_post = document.querySelector('#blog-post').value.trim();
-  const description = document.querySelector('#blog-desc').value.trim();
+  const name = document.querySelector('#project-name').value.trim();
+  const needed_funding = document.querySelector('#project-funding').value.trim();
+  const description = document.querySelector('#project-desc').value.trim();
 
-  if (name && blog_post && description) {
-    const response = await fetch(`/api/blogs`, {
+  if (name && needed_funding && description) {
+    const response = await fetch(`/api/projects`, {
       method: 'POST',
-      body: JSON.stringify({ name, blog_post, description }),
+      body: JSON.stringify({ name, needed_funding, description }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
-      document.location.replace('/blog');
+      document.location.replace('/profile');
     } else {
-      alert('Failed to create blog');
+      alert('Failed to create project');
     }
   }
 };
@@ -26,22 +26,22 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/blogs/${id}`, {
+    const response = await fetch(`/api/projects/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
-      document.location.replace('/blog');
+      document.location.replace('/profile');
     } else {
-      alert('Failed to delete blog');
+      alert('Failed to delete project');
     }
   }
 };
 
 document
-  .querySelector('.new-blog-form')
+  .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.blog-list')
+  .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
