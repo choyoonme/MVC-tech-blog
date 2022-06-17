@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const projectRoutes = require('./projectRoutes');
-const seedDatabaseRoutes = require('./seedDatabaseRoutes');
-router.use('/users', userRoutes);
-router.use('/projects', projectRoutes);
+const postRoutes = require('./postRoutes');
 
-router.use('/seedDatabase', seedDatabaseRoutes);
+router.use('/users', userRoutes);
+router.use('/post', postRoutes);
 
 module.exports = router;
