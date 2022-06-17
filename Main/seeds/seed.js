@@ -5,6 +5,7 @@ const userData = require('./userData.json');
 const postData = require('./postData.json');
 
 const seedDatabase = async () => {
+  await sequelize.query('SET FOREIGN_KEY_CHECKS = 0');
   await sequelize.sync({ force: true });
 
   const users = await User.bulkCreate(userData, {

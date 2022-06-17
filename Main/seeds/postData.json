@@ -1,17 +1,14 @@
 [
   {
-    "name": "Tech Blog",
-    "description": "A place to post completed projects, ideas, or general resources.",
-    "comments": "cool!"
+    "name": "Bob",
+    "description": "A place to post completed projects, ideas, or general resources."
   },
   {
-    "name": "Code Quiz",
-    "description": "A short multiple choice quiz to test  your JS knowledge!",
-    "comments": "thanks for this."
+    "name": "Sam",
+    "description": "A short multiple choice quiz to test  your JS knowledge!"
   },
   {
-    "name": "Notetaker",
-    "description": "An app to help you keep track of your reminders and useful notes to self.",
-    "comments": "useful."
+    "name": "Sera",
+    "description": "An app to help you keep track of your reminders and useful notes to self."
   }
 ]
