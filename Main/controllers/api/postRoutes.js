@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -9,6 +9,40 @@ router.post('/', withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
     res.status(200).json(newPost);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.get('/', async (req, res) => {
+  try {
+    const postData = await Post.findAll();
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put('/:id', async (res, res) => {
+  try {
+    const postData = await Post.update(
+      {
+        ...req.body,
+        user: req.sessions.user_id,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    if (!postData) {
+      res.status(404).json({
+        message: 'no post found',
+      });
+      return;
+    }
+    res.json(postData);
   } catch (err) {
     res.status(400).json(err);
   }
