@@ -4,48 +4,46 @@
 
 body,
 html {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-  color: rgb(219, 223, 230);
+  height: 70vh;
+  padding: 20px;
+  margin: 30px;
+  font-family: serif;
+  color: black;
 }
 
 main,
 .site-name {
-  background-color: #363f57;
+  background-color: pink;
 }
 
 a,
 .btn-no-style,
 #comment-subtitle {
-  color: #4161a1;
+  color: lightblue;
 }
 
 a:hover,
 .btn-no-style:hover {
-  color: #5364a7;
+  color: darkcyan;
 }
 
 a {
   text-decoration: none;
-  font-weight: bold;
-  transition: color .1s;
+  font-weight: normal;
 }
 
 button {
-  background-color: #000000;
+  background-color: black;
   border: 0;
-  padding: 1%;
+  padding: 3%;
   color: white;
   font-weight: bold;
-  transition: background-color .1s;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 button:hover {
-  background-color: #dee3e8;
+  background-color: lightcyan;
 }
 
 .post-list {
@@ -62,22 +60,22 @@ textarea,
 input {
   padding: .5%;
   border-radius: 5px;
-  border: 1px solid rgb(243, 240, 240);
+  border: 2px solid gray;
 }
 
 textarea:focus,
 input:focus {
   outline: none;
-  border: 1px solid #ebebeb;
+  border: 1px solid white;
 }
 
 textarea {
-  min-width: 40%;
-  min-height: 100px;
+  min-width: 35%;
+  min-height: 80px;
 }
 
 form>div {
-  margin-bottom: 2%;
+  margin-bottom: 5%;
 }
 
 form label {
@@ -144,7 +142,7 @@ header h1 {
 
 .site-row {
   display: flex;
-  border-bottom: 1px solid rgb(250, 246, 246);
+  border-bottom: 1px solid white;
   justify-content: center;
 }
 
@@ -211,7 +209,7 @@ main {
 }
 
 .comment:nth-child(odd) {
-  background-color: #4161a1;
+  background-color: pink;
 }
 
 .comment .meta {
@@ -244,12 +242,12 @@ main {
 
 .sign-in-link,
 .login-link {
-  color: #000000;
+  color: black;
 }
 
 .form-heading h1,
 .form-heading h2 {
-  color: #b8cba2;
+  color: white;
 }
 
 .login-form,
